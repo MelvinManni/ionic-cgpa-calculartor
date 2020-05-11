@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <title>Melvin | CGPA Calculator</title>
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar class="ion-text-center" color="primary">
+          <ion-title>CGPA CALCULATOR</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <form>
+                <div class="course-holder">
+                  <div class="course-details" id="thisOne">
+                    <ion-item>
+                      <ion-label position="floating">Course Code </ion-label>
+                      <ion-input
+                        required
+                        name="cname"
+                        class="cname"
+                        type="text"
+                      ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label position="floating">
+                        Course Unit <ion-text color="danger">*</ion-text>
+                      </ion-label>
+                      <ion-input
+                        required
+                        name="cunit"
+                        type="number"
+                        class="cunit"
+                      ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label
+                        >Grade<ion-text color="danger">*</ion-text>
+                      </ion-label>
+                      <ion-select
+                        class="cgrade"
+                        multiple="false"
+                        placeholder="Select Grade"
+                      >
+                        <ion-select-option value="5">A</ion-select-option>
+                        <ion-select-option value="4">B</ion-select-option>
+                        <ion-select-option value="3">C</ion-select-option>
+                        <ion-select-option value="2">D</ion-select-option>
+                        <ion-select-option value="1">E</ion-select-option>
+                        <ion-select-option value="0">F</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                  </div>
+                </div>
+
+                <div class="add-div">
+                  <ion-button id="clear" class="ion-margin-top" color="danger">
+                    Clear <ion-icon name="backspace-outline"></ion-icon>
+                  </ion-button>
+                  <ion-button id="add" class="ion-margin-top" size="12">
+                    Add Course <ion-icon name="add-outline"></ion-icon>
+                  </ion-button>
+                </div>
+
+                <ion-button
+                  type="button"
+                  id="calculate"
+                  class="ion-margin-top"
+                  size="12"
+                >
+                  Calculate
+                </ion-button>
+              </form>
+              <ion-grid id="result-holder">
+                <ion-row>
+                  <ion-col size-sm="12" size-md="10" offset-md="1">
+                    <ion-card class="result">
+                      <ion-button class="back" fill="clear">
+                        <ion-icon name="return-up-back-outline"></ion-icon>
+                      </ion-button>
+                      <ion-card-header>
+                        <ion-card-title class="ion-text-center"
+                          >CGPA RESULT</ion-card-title
+                        >
+                      </ion-card-header>
+                      <ion-card-content>
+                        <ion-list class="ion-text-center" id="courseResult">
+                          <ion-item class="ion-no-margin ion-no-padding">
+                            <ion-grid>
+                              <ion-row class="ion-text-center">
+                                <ion-col size="4"
+                                  ><ion-label>Course Code</ion-label></ion-col
+                                >
+                                <ion-col size="4"
+                                  ><ion-label>Unit</ion-label></ion-col
+                                >
+                                <ion-col size="4"
+                                  ><ion-label>Grade</ion-label></ion-col
+                                >
+                              </ion-row>
+                            </ion-grid>
+                          </ion-item>
+                        </ion-list>
+
+                        <ion-text class="cgpa">
+                          <h2>CGPA: <span id="cgpa"></span></h2>
+                        </ion-text>
+                      </ion-card-content>
+                    </ion-card>
+
+                    <ion-card>
+                      <ion-card-header class="downloadCard">
+                        <ion-button id="print" fill="clear">
+                          Download <ion-icon name="download-outline"></ion-icon>
+                        </ion-button>
+                      </ion-card-header>
+                    </ion-card>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+
+      <ion-footer>
+        <ion-toolbar color="primary">
+          <ion-title class="ion-text-center">
+            <p>With <ion-icon name="heart-outline"></ion-icon> Melvin_Manni</p>
+          </ion-title>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-app>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <script src="./app.js"></script>
+    <script src="./download.js"></script>
+  </body>
+</html>

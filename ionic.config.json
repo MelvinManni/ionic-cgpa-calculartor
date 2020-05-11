@@ -1,0 +1,7 @@
+{
+  "name": "CGPA-Calculator",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "custom"
+}
