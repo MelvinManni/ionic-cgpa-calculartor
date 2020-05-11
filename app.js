@@ -35,7 +35,6 @@ $(function () {
     $('.cgrade').val('');
   });
 
-
   // deletin course details
 
   $('.course-holder').on('click', '.delete', del);
@@ -57,7 +56,7 @@ $(function () {
     }
 
     cgpa += parseFloat(gpa / totalUnit).toFixed(1);
-    if (gpa === undefined || isNaN(cgpa) || cgpa === 'NaN') {
+    if (gpa === undefined || isNaN(cgpa) || cgpa === '0NaN') {
       presentAlert();
     } else {
       resultHolder.style.visibility = 'visible';
@@ -74,8 +73,7 @@ $(function () {
 
     resultHolder.className = 'animate__fadeOutDown';
     resultHolder.style.visibility = 'collapse';
-    for (let i = 0; i < unit.length; i++) {
-    }
+    for (let i = 0; i < unit.length; i++) {}
 
     $('.remove').remove();
     $('#cgpa').text('');
