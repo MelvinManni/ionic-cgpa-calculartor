@@ -59,8 +59,6 @@ $(function () {
       );
     }
 
-    console.log(totalGrade * totalUnit);
-
     cgpa += parseFloat(gpa / totalUnit).toFixed(2);
     if (gpa === undefined || isNaN(cgpa) || cgpa === '0NaN') {
       presentAlert();
