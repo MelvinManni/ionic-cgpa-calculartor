@@ -38,6 +38,8 @@ $(function () {
   // deletin course details
 
   $('.course-holder').on('click', '.delete', del);
+  let x = 0;
+  let y = 0;
 
   // deletin course details ends
 
@@ -46,7 +48,9 @@ $(function () {
     for (let index = 0; index < unit.length; index++) {
       totalUnit += parseInt(unit[index].value);
       totalGrade += parseInt(grade[index].value);
-      gpa += totalGrade * totalUnit;
+
+
+      gpa += parseInt(unit[index].value) * parseInt(grade[index].value);
 
       addingCourseResult(
         name[index].value,
@@ -55,13 +59,16 @@ $(function () {
       );
     }
 
-    cgpa += parseFloat(gpa / totalUnit).toFixed(1);
+    console.log(totalGrade * totalUnit);
+
+    cgpa += parseFloat(gpa / totalUnit).toFixed(2);
     if (gpa === undefined || isNaN(cgpa) || cgpa === '0NaN') {
       presentAlert();
     } else {
       resultHolder.style.visibility = 'visible';
       resultHolder.className = 'animate__fadeInDown';
-      $('#cgpa').text(cgpa.replace(/^0+/, ''));
+      $('#cgpa').text(cgpa);
+      console.log(totalUnit);
     }
 
     e.preventDefault();
@@ -95,7 +102,7 @@ $(function () {
                     </ion-button>
                     <ion-item>
                       <ion-label position="floating">Course Name </ion-label>
-                      <ion-input required name="cname" type="text"></ion-input>
+                      <ion-input required class="cname" name="cname" type="text"></ion-input>
                     </ion-item>
                     <ion-item>
                       <ion-label position="floating">
@@ -112,7 +119,7 @@ $(function () {
                       <ion-label
                         >Grade<ion-text color="danger">*</ion-text>
                       </ion-label>
-                      <ion-select cgrade multiple="false" placeholder="Select Grade">
+                      <ion-select class="cgrade" multiple="false" placeholder="Select Grade">
                         <ion-select-option value="5">A</ion-select-option>
                         <ion-select-option value="4">B</ion-select-option>
                         <ion-select-option value="3">C</ion-select-option>
