@@ -4,7 +4,8 @@
   "description": "I have always found it a bit tedious calculating CGPA manually so i thought of a way to use what i love doing to make things a little easier for me. :)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ionic"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/MelvinManni/ionic-cgpa-calculartor/issues"
   },
-  "homepage": "https://github.com/MelvinManni/ionic-cgpa-calculartor#readme"
+  "homepage": "https://github.com/MelvinManni/ionic-cgpa-calculartor#readme",
+  "dependencies": {
+    "cordova-android": "8.1.0"
+  }
 }

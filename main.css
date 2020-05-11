@@ -63,7 +63,7 @@ ion-col {
 
 .result {
   overflow-y: scroll;
-  height: 65vh;
+  height: 70vh;
 }
 
 .back {
@@ -102,17 +102,12 @@ ion-list ion-item {
     text-align: center;
 }
 
-
-.downloadCard{
-  display: flex;
-  justify-content: center;
+#loader{
+  width: 100px;
+  margin: 0 auto;
 }
 
-.downloadCard ion-button{
-  font-size: 20px;
+.loader{
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
 }

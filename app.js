@@ -63,10 +63,16 @@ $(function () {
     if (gpa === undefined || isNaN(cgpa) || cgpa === '0NaN') {
       presentAlert();
     } else {
+      $('.result').hide()
       resultHolder.style.visibility = 'visible';
-      resultHolder.className = 'animate__fadeInDown';
+      resultHolder.className = 'animate__fadeInUp';
       $('#cgpa').text(cgpa);
-      console.log(totalUnit);
+      setTimeout(()=>{
+        $('.loader').fadeOut()
+        setTimeout(()=>{
+          $('.result').fadeIn('slow')
+        }, 400)
+      }, 1500)
     }
 
     e.preventDefault();
