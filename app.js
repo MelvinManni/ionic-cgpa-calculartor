@@ -36,20 +36,6 @@ $(function () {
   });
 
 
-
-  //printing screen
-
-  // $("#print").on("click", function () {
-  //   var divContents = $(".result").text();
-  //   var printWindow = window.open('', '', 'height=400,width=800');
-  //   printWindow.document.write('<html><head><title>DIV Contents</title>');
-  //   printWindow.document.write('</head><body >');
-  //   printWindow.document.write(divContents);
-  //   printWindow.document.write('</body></html>');
-  //   printWindow.document.close();
-  //   printWindow.print();
-  // });
-
   // deletin course details
 
   $('.course-holder').on('click', '.delete', del);
